@@ -1,7 +1,7 @@
 <div align="center">
   <h1>🎮 Mobile TicTacToe Game</h1>
   <p>
-    <strong>A Modern Cross-Platform TicTacToe Game Built with Xamarin.Forms</strong>
+    <strong>A Cross-Platform TicTacToe Game Built with Xamarin.Forms</strong>
   </p>
   <p>
     <a href="#features">Features</a> •
