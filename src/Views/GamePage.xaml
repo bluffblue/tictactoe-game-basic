@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe.Views.GamePage">
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Text="{Binding GameStatus}"
+               FontSize="24"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20"/>
+
+        <Grid Grid.Row="1" 
+              RowSpacing="5" 
+              ColumnSpacing="5"
+              BackgroundColor="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Text="{Binding BoardCells[0]}" Command="{Binding CellTappedCommand}" CommandParameter="0"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="{Binding BoardCells[1]}" Command="{Binding CellTappedCommand}" CommandParameter="1"/>
+            <Button Grid.Row="0" Grid.Column="2" Text="{Binding BoardCells[2]}" Command="{Binding CellTappedCommand}" CommandParameter="2"/>
+            <Button Grid.Row="1" Grid.Column="0" Text="{Binding BoardCells[3]}" Command="{Binding CellTappedCommand}" CommandParameter="3"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="{Binding BoardCells[4]}" Command="{Binding CellTappedCommand}" CommandParameter="4"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="{Binding BoardCells[5]}" Command="{Binding CellTappedCommand}" CommandParameter="5"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="{Binding BoardCells[6]}" Command="{Binding CellTappedCommand}" CommandParameter="6"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="{Binding BoardCells[7]}" Command="{Binding CellTappedCommand}" CommandParameter="7"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="{Binding BoardCells[8]}" Command="{Binding CellTappedCommand}" CommandParameter="8"/>
+        </Grid>
+
+        <Button Grid.Row="2"
+                Text="Reset Game"
+                Command="{Binding ResetGameCommand}"
+                Margin="0,20,0,0"/>
+    </Grid>
+</ContentPage> 
