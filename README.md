@@ -5,7 +5,6 @@
   </p>
   <p>
     <a href="#features">Features</a> •
-    <a href="#preview">Preview</a> •
     <a href="#installation">Installation</a> •
     <a href="#usage">Usage</a> •
     <a href="#architecture">Architecture</a>
@@ -29,23 +28,6 @@
 - Cross-platform compatibility
 - High-performance game logic
 - Smooth animations and transitions
-
-## 🖼️ Preview
-
-<div align="center">
-  <table>
-    <tr>
-      <td><strong>Game Board</strong></td>
-      <td><strong>Winning State</strong></td>
-      <td><strong>Draw State</strong></td>
-    </tr>
-    <tr>
-      <td>[Game Board Screenshot]</td>
-      <td>[Winning Screenshot]</td>
-      <td>[Draw Screenshot]</td>
-    </tr>
-  </table>
-</div>
 
 ## 🛠️ Technical Stack
 
