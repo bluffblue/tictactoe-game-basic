@@ -11,6 +11,8 @@ public class GameViewModel : INotifyPropertyChanged
     private ObservableCollection<string> boardCells;
     private string gameStatus;
     private bool isGameOver;
+    private GameMode selectedGameMode;
+    private DifficultyLevel selectedDifficulty;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -44,8 +46,32 @@ public class GameViewModel : INotifyPropertyChanged
         }
     }
 
+    public GameMode SelectedGameMode
+    {
+        get => selectedGameMode;
+        set
+        {
+            selectedGameMode = value;
+            gameBoard.GameMode = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public DifficultyLevel SelectedDifficulty
+    {
+        get => selectedDifficulty;
+        set
+        {
+            selectedDifficulty = value;
+            gameBoard.Difficulty = value;
+            OnPropertyChanged();
+        }
+    }
+
     public ICommand CellTappedCommand { get; }
     public ICommand ResetGameCommand { get; }
+    public ICommand ChangeGameModeCommand { get; }
+    public ICommand ChangeDifficultyCommand { get; }
 
     public GameViewModel()
     {
@@ -53,6 +79,12 @@ public class GameViewModel : INotifyPropertyChanged
         BoardCells = new ObservableCollection<string>(new string[9]);
         CellTappedCommand = new Command<int>(OnCellTapped);
         ResetGameCommand = new Command(ResetGame);
+        ChangeGameModeCommand = new Command<GameMode>(mode => SelectedGameMode = mode);
+        ChangeDifficultyCommand = new Command<DifficultyLevel>(level => SelectedDifficulty = level);
+        
+        SelectedGameMode = GameMode.MultiPlayer;
+        SelectedDifficulty = DifficultyLevel.Medium;
+        
         UpdateGameStatus();
     }
 

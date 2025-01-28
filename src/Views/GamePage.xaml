@@ -40,9 +40,40 @@
             <Button Grid.Row="2" Grid.Column="2" Text="{Binding BoardCells[8]}" Command="{Binding CellTappedCommand}" CommandParameter="8"/>
         </Grid>
 
-        <Button Grid.Row="2"
-                Text="Reset Game"
-                Command="{Binding ResetGameCommand}"
-                Margin="0,20,0,0"/>
+        <StackLayout Grid.Row="2" Spacing="10" Margin="0,20,0,0">
+            <Label Text="Game Mode" FontSize="18" HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="VS Player" 
+                        Command="{Binding ChangeGameModeCommand}"
+                        CommandParameter="{x:Static local:GameMode.MultiPlayer}"/>
+                <Button Text="VS Computer"
+                        Command="{Binding ChangeGameModeCommand}"
+                        CommandParameter="{x:Static local:GameMode.SinglePlayer}"/>
+            </StackLayout>
+            
+            <Label Text="Difficulty" 
+                   FontSize="18" 
+                   HorizontalOptions="Center"
+                   IsVisible="{Binding SelectedGameMode, Converter={StaticResource GameModeToVisibilityConverter}}"/>
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center"
+                         IsVisible="{Binding SelectedGameMode, Converter={StaticResource GameModeToVisibilityConverter}}">
+                <Button Text="Easy" 
+                        Command="{Binding ChangeDifficultyCommand}"
+                        CommandParameter="{x:Static local:DifficultyLevel.Easy}"/>
+                <Button Text="Medium"
+                        Command="{Binding ChangeDifficultyCommand}"
+                        CommandParameter="{x:Static local:DifficultyLevel.Medium}"/>
+                <Button Text="Hard"
+                        Command="{Binding ChangeDifficultyCommand}"
+                        CommandParameter="{x:Static local:DifficultyLevel.Hard}"/>
+                <Button Text="Ultimate"
+                        Command="{Binding ChangeDifficultyCommand}"
+                        CommandParameter="{x:Static local:DifficultyLevel.Ultimate}"/>
+            </StackLayout>
+            
+            <Button Text="Reset Game"
+                    Command="{Binding ResetGameCommand}"/>
+        </StackLayout>
     </Grid>
 </ContentPage> 
