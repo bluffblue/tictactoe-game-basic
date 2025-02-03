@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🎮 Mobile TicTacToe Gamee</h1>
+  <h1>🎮 Mobile TicTacToe Game</h1>
   <p>
     <strong>A Cross-Platform TicTacToe Game Built with Xamarin.Forms</strong>
   </p>
